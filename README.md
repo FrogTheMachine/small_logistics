@@ -9,12 +9,12 @@ Na zakładce nowe zlecenie można utworzyć nowe zlecenie. Na zakładce Nowa tra
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Zaloguj się jako PostgreSQL psql -U postgres
+Zaloguj się jako PostgreSQL: psql -U postgres
 
-Utwórz bazę danych CREATE DATABASE logistics;
+Utwórz bazę danych: CREATE DATABASE logistics;
 
-Zaimportuj bazę danych (w cmd) pg_restore -U postgres -d logistics -O C:\ścieżka\do\pliku\backup.sql
+Zaimportuj bazę danych (w cmd): pg_restore -U postgres -d logistics -O C:\ścieżka\do\pliku\backup.sql
 
-W cmd przejdź do ścieżki, w której znajduje się aplikacja i uruchom ją za pomocą python app.py
+W cmd przejdź do ścieżki, w której znajduje się aplikacja i uruchom ją za pomocą: python app.py
 
 Aplikacja dostępna pod adresem http://127.0.0.1:5000/
