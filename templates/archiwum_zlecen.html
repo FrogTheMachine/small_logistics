@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<a href="/">Nowe zlecenie, </a>
+<a href="/nowa-trasa">Nowa trasa, </a>
+<a href="/lista-tras">Lista aktywnych tras, </a>
+<a href="/archiwum-zlecen">Archiwum zleceń, </a>
+<a href="/archiwum-tras">Archiwum tras, </a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archiwum Zleceń</title>
+</head>
+<body>
+    <h1>Archiwum Zleceń</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nr Zlecenia</th>
+                <th>Data</th>
+                <th>Klient</th>
+                <th>Nadawca</th>
+                <th>Odbiorca</th>
+                <th>Towar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in archived_orders %}
+            <tr>
+                <td>{{ order[0] }}</td>
+                <td>{{ order[1] }}</td>
+                <td>{{ order[2] }}</td>
+                <td>{{ order[3] }}</td>
+                <td>{{ order[4] }}</td>
+                <td>{{ order[5] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
