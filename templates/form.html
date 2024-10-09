@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<a href="/">Nowe zlecenie</a>
+<a href="/nowa-trasa">Nowa trasa, </a>
+<a href="/lista-tras">Lista aktywnych tras, </a>
+<a href="/archiwum-zlecen">Archiwum zleceń, </a>
+<a href="/archiwum-tras">Archiwum tras, </a>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wprowadź zlecenie</title>
+</head>
+<body>
+    <h1>Wprowadź zlecenie</h1>
+    <form method="POST">
+        <label for="customer">Klient:</label>
+        <select name="customer" id="customer">
+            {% for customer in customers %}
+                <option value="{{ customer[0] }}">{{ customer[0] }} - {{ customer[1] }}, {{ customer[2] }}, {{ customer[3] }} {{ customer[4] }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="sender">Nadawca:</label>
+        <select name="sender" id="sender">
+            {% for sender in senders %}
+                <option value="{{ sender[0] }}">{{ sender[0] }} - {{ sender[1] }}, {{ sender[2] }}, {{ sender[3] }} {{ sender[4] }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="receiver">Odbiorca:</label>
+        <select name="receiver" id="receiver">
+            {% for receiver in receivers %}
+                <option value="{{ receiver[0] }}">{{ receiver[0] }} - {{ receiver[1] }}, {{ receiver[2] }}, {{ receiver[3] }} {{ receiver[4] }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="goods">Towar:</label>
+        <select name="goods" id="goods">
+            {% for good in goods_list %}
+                <option value="{{ good[0] }}">{{ good[0] }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="weight">Waga (kg):</label>
+        <input type="number" name="weight" id="weight" required><br><br>
+
+        <button type="submit">Zapisz</button>
+    </form>
+</body>
+</html>

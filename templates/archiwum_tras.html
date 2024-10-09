@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<a href="/">Nowe zlecenie, </a>
+<a href="/nowa-trasa">Nowa trasa, </a>
+<a href="/lista-tras">Lista aktywnych tras, </a>
+<a href="/archiwum-zlecen">Archiwum zleceń, </a>
+<a href="/archiwum-tras">Archiwum tras, </a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archiwum Tras</title>
+</head>
+<body>
+    <h1>Archiwum Tras</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nr Trasy</th>
+                <th>Data</th>
+                <th>Zlecenie 1</th>
+                <th>Zlecenie 2</th>
+                <th>Zlecenie 3</th>
+                <th>Samochód</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tour in archived_tours %}
+            <tr>
+                <td>{{ tour[0] }}</td>
+                <td>{{ tour[1] }}</td>
+                <td>{{ tour[2] }}</td>
+                <td>{{ tour[3] }}</td>
+                <td>{{ tour[4] }}</td>
+                <td>{{ tour[5] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

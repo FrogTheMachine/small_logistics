@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<a href="/">Nowe zlecenie, </a>
+<a href="/nowa-trasa">Nowa trasa</a>
+<a href="/lista-tras">Lista aktywnych tras, </a>
+<a href="/archiwum-zlecen">Archiwum zleceń, </a>
+<a href="/archiwum-tras">Archiwum tras, </a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utwórz trasę</title>
+</head>
+<body>
+    <h1>Utwórz trasę</h1>
+    <form method="POST">
+        <label for="order_1">Dodaj zlecenie 1:</label>
+        <select name="order_1" id="order_1" required>
+            {% for order in orders %}
+                <option value="{{ order[0] }}">
+                    {{ order[0] }} - {{ order[1] }} | {{ order[2] }} -> {{ order[3] }} | {{ order[4] }} | {{ order[5] }} kg
+                </option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="order_2">Dodaj zlecenie 2:</label>
+        <select name="order_2" id="order_2">
+            {% for order in orders %}
+                <option value="{{ order[0] }}">
+                    {{ order[0] }} - {{ order[1] }} | {{ order[2] }} -> {{ order[3] }} | {{ order[4] }} | {{ order[5] }} kg
+                </option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="order_3">Dodaj zlecenie 3:</label>
+        <select name="order_3" id="order_3">
+            {% for order in orders %}
+                <option value="{{ order[0] }}">
+                    {{ order[0] }} - {{ order[1] }} | {{ order[2] }} -> {{ order[3] }} | {{ order[4] }} | {{ order[5] }} kg
+                </option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="truck">Wybierz samochód:</label>
+        <select name="truck" id="truck" required>
+            {% for truck in trucks %}
+                <option value="{{ truck[0] }}">{{ truck[0] }} | {{ truck[1] }} kg</option>
+            {% endfor %}
+        </select><br><br>
+
+        <button type="submit">Zapisz</button>
+    </form>
+</body>
+</html>
