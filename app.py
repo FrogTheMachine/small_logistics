@@ -7,9 +7,9 @@ app = Flask(__name__)
 # Konfiguracja połączenia z bazą danych
 conn_params = {
     'dbname': 'logistics',
-    'user': 'admin',
-    'password': 'Mango17Cytryn@',
-    'host': '192.168.1.49',
+    'user': 'postgres',
+    'password': 'Melon5carro7',
+    'host': 'localhost',
     'port': '5432'
 }
 
